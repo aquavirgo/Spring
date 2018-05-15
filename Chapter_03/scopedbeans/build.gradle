@@ -14,9 +14,11 @@ repositories {
 
 dependencies {
     compile("org.springframework:spring-context:${springVersion}")
-
+    compile("org.aspectj:aspectjrt:1.+")
+    compile 'org.springframework:spring-aspects:4.1.8.RELEASE'
     testCompile("org.springframework:spring-test:${springVersion}")
     testCompile "com.github.stefanbirkner:system-rules:${systemRulesVersion}"
+    compile ("org.springframework:spring-aop:4.+")
 }
 
 task wrapper(type: Wrapper) {

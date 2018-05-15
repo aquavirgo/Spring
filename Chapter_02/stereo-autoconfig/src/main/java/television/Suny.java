@@ -2,18 +2,22 @@ package television;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
 @Component
+@Primary
 @Qualifier("suny")
 public class Suny implements TV {
     KanalTv kanalTv;
     String opis;
+
     @Autowired
     Suny(KanalTv kanalTv){
         this.kanalTv = kanalTv;
         opis = "Suny";
     }
+
     @Override
     public void watch() {
         kanalTv.watch();
